@@ -9,6 +9,11 @@ first_prev.addEventListener('click', (e) => {
     let x = first_pro.scrollLeft;
     let full = first_pro.scrollWidth - window.innerWidth;
     first_pro.scrollBy({left:-full*0.25, behavior:"smooth"})
+    if (x <= full*0.25) {
+        first_prev.style.visibility="hidden";
+    } else {
+        first_next.style.visibility='visible';
+    }
     console.log(x, full*0.25);
 });
 
@@ -16,18 +21,33 @@ first_next.addEventListener('click', (e) => {
     let x = first_pro.scrollLeft;
     let full = first_pro.scrollWidth - window.innerWidth;
     first_pro.scrollBy({left:full*0.25, behavior:"smooth"})    
+    if (x >= full*0.75) {
+        first_next.style.visibility="hidden";
+    } else {
+        first_prev.style.visibility="visible";
+    }
 });
 
 second_prev.addEventListener('click', (e) => {
     let x = second_pro.scrollLeft;
     let full = second_pro.scrollWidth - window.innerWidth;
     second_pro.scrollBy({left:-full*0.0833, behavior:"smooth"})
+    if (x <= full*0.0833) {
+        second_prev.style.visibility="hidden"
+    } else {
+        second_next.style.visibility="visible"
+    }
     console.log(x, full*0.25);
 });
 
 second_next.addEventListener('click', (e) => {
     let x = second_pro.scrollLeft;
     let full = second_pro.scrollWidth - window.innerWidth;
+    if (x >= full*0.913) {
+        second_next.style.visibility="hidden"
+    } else {
+        second_prev.style.visibility="visible"
+    }
     second_pro.scrollBy({left:full*0.0833, behavior:"smooth"})    
 });
 

@@ -126,7 +126,7 @@ a {
     box-shadow: 10px 15px 20px -2px gray;
     background-color: rgb(253, 247, 236);
     overflow: hidden;
-    overflow-x: scroll;
+    overflow-x: hidden;
   	overflow-y: hidden;
 }
 
@@ -419,6 +419,13 @@ a {
     cursor: pointer;
 }
 
+.first_prev {
+    visibility: hidden;
+}
+
+.second_prev {
+    visibility: hidden;
+}
 .prev_btn {
     left: 0;
 }
